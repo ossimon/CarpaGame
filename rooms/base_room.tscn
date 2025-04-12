@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6j6d6viqk4uh"]
+
+[ext_resource type="Script" path="res://rooms/base_room.gd" id="1_vqhyv"]
+[ext_resource type="PackedScene" uid="uid://cxgl3s5styauj" path="res://rooms/wall.tscn" id="2_mdjk4"]
+
+[node name="BaseRoom" type="Node2D"]
+script = ExtResource("1_vqhyv")
+metadata/_edit_horizontal_guides_ = [360.0]
+metadata/_edit_vertical_guides_ = [645.0]
+
+[node name="NorthWall" parent="." instance=ExtResource("2_mdjk4")]
+position = Vector2(645, 0)
+
+[node name="WestWall" parent="." instance=ExtResource("2_mdjk4")]
+position = Vector2(0, 360)
+rotation = -1.5708
+
+[node name="SouthWall" parent="." instance=ExtResource("2_mdjk4")]
+position = Vector2(644, 721)
+
+[node name="EastWall" parent="." instance=ExtResource("2_mdjk4")]
+position = Vector2(1280, 360)
+rotation = -4.71239
