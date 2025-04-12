@@ -15,6 +15,10 @@ run/main_scene="res://levels/last_level/last_level.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+RoomSwitcher="*res://room_switcher.gd"
+
 [display]
 
 window/size/viewport_width=1280
