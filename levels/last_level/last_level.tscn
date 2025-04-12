@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq86xm5xqgwcq"]
+[gd_scene load_steps=4 format=3 uid="uid://bq86xm5xqgwcq"]
 
 [ext_resource type="Texture2D" uid="uid://b2j0gx6bj2aib" path="res://levels/last_level/Background.png" id="1_qy3e8"]
-[ext_resource type="PackedScene" uid="uid://bbmwqxpl6683t" path="res://characters/main_character/main_young.tscn" id="1_xn3xb"]
+[ext_resource type="PackedScene" uid="uid://bbmwqxpl6683t" path="res://characters/main_character/main_character.tscn" id="1_xn3xb"]
+[ext_resource type="PackedScene" uid="uid://ila1jhhjwt45" path="res://rooms/Room1.tscn" id="4_y7wy4"]
 
 [node name="LastLevel" type="Sprite2D"]
 texture = ExtResource("1_qy3e8")
 
 [node name="MainCharacter" parent="." instance=ExtResource("1_xn3xb")]
 position = Vector2(84, 42)
+
+[node name="Room1" parent="." instance=ExtResource("4_y7wy4")]

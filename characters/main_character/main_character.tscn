@@ -1,12 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbmwqxpl6683t"]
 
 [ext_resource type="Texture2D" uid="uid://cvhcnqupt63qj" path="res://characters/main_character/OldMan.png" id="1_bgiet"]
-[ext_resource type="Script" uid="uid://btf7a6uisomgt" path="res://characters/main_character/main_character.gd" id="1_pgxpp"]
+[ext_resource type="Script" path="res://characters/main_character/main_character.gd" id="1_pgxpp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qdea8"]
 
 [node name="MainCharacter" type="CharacterBody2D"]
+z_index = 10
 script = ExtResource("1_pgxpp")
+speed = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qdea8")
