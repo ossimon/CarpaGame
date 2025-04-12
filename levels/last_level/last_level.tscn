@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://bq86xm5xqgwcq"]
 
-[ext_resource type="PackedScene" uid="uid://bbmwqxpl6683t" path="res://characters/main_character/main_young.tscn" id="1_77jvx"]
+[ext_resource type="PackedScene" uid="uid://bd228rcvpytva" path="res://characters/main_old/main_old.tscn" id="1_32v7j"]
 
 [node name="LastLevel" type="Node2D"]
 
-[node name="YoungCharacter" parent="." instance=ExtResource("1_77jvx")]
+[node name="MainOld" parent="." instance=ExtResource("1_32v7j")]
 
-[node name="Camera2D" type="Camera2D" parent="YoungCharacter"]
+[node name="Camera2D" type="Camera2D" parent="MainOld"]
 zoom = Vector2(5, 5)
 limit_right = 9999992

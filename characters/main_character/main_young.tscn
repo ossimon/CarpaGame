@@ -133,7 +133,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="YoungCharacter" type="Node2D"]
+[node name="MainYoung" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
@@ -145,4 +145,4 @@ position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_wehhw")
 animation = &"idle"
 autoplay = "move_left"
-frame_progress = 0.345411
+frame_progress = 0.396412
