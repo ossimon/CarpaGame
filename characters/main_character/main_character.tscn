@@ -6,7 +6,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qdea8"]
 
 [node name="MainCharacter" type="CharacterBody2D"]
+z_index = 10
 script = ExtResource("1_pgxpp")
+speed = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qdea8")

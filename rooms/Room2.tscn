@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://y3sfu1vcjsj8"]
+
+[ext_resource type="Script" path="res://rooms/Room2.gd" id="1_a3vpi"]
+[ext_resource type="PackedScene" uid="uid://cxgl3s5styauj" path="res://rooms/wall.tscn" id="1_una4t"]
+
+[sub_resource type="Gradient" id="Gradient_6uhtg"]
+offsets = PackedFloat32Array(0, 0.989619, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.615917, 0.615917, 0.615917, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jmgyn"]
+gradient = SubResource("Gradient_6uhtg")
+
+[node name="Room2" type="Node2D"]
+script = ExtResource("1_a3vpi")
+wall_to_room = {
+"EastWall": "",
+"NorthWall": "",
+"SouthWall": "Room1",
+"WestWall": "Room3"
+}
+wall_config = {
+"East": false,
+"North": false,
+"South": true,
+"West": true
+}
+
+[node name="NorthWall" parent="." instance=ExtResource("1_una4t")]
+position = Vector2(645, 0)
+
+[node name="WestWall" parent="." instance=ExtResource("1_una4t")]
+position = Vector2(0, 360)
+rotation = -1.5708
+
+[node name="SouthWall" parent="." instance=ExtResource("1_una4t")]
+position = Vector2(644, 721)
+rotation = 3.14159
+
+[node name="EastWall" parent="." instance=ExtResource("1_una4t")]
+position = Vector2(1280, 360)
+rotation = -4.71239
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(644.5, 358)
+scale = Vector2(19.6719, 10.9062)
+texture = SubResource("GradientTexture2D_jmgyn")

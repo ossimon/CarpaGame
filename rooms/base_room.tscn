@@ -5,6 +5,8 @@
 
 [node name="BaseRoom" type="Node2D"]
 script = ExtResource("1_vqhyv")
+wall_to_room = null
+wall_config = null
 metadata/_edit_horizontal_guides_ = [360.0]
 metadata/_edit_vertical_guides_ = [645.0]
 
@@ -17,6 +19,7 @@ rotation = -1.5708
 
 [node name="SouthWall" parent="." instance=ExtResource("2_mdjk4")]
 position = Vector2(644, 721)
+rotation = 3.14159
 
 [node name="EastWall" parent="." instance=ExtResource("2_mdjk4")]
 position = Vector2(1280, 360)

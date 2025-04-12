@@ -1,8 +1,18 @@
 extends Node2D
+class_name BaseRoom
 
 var wall_nodes
+var transtitions
+@onready var player = $/root/LastLevel/MainCharacter
 
-var wall_config = {
+@export var wall_to_room = {
+	"NorthWall": "Room1",
+	"WestWall": "",
+	"SouthWall": "",
+	"EastWall": "",
+}
+
+@export var wall_config = {
 	"North": true,
 	"West": false,
 	"South": false,
@@ -16,7 +26,6 @@ func _ready():
 		"South": $SouthWall,
 		"East": $EastWall
 	}
-	
 	setup_room()
 	
 func setup_room(): 
@@ -26,6 +35,7 @@ func setup_room():
 		wall.update()
 		wall.doorway_entered.connect(_on_doorway_entered)
 
-func _on_doorway_entered():
-	# switch scene
+func _on_doorway_entered(directionWall: String):
+	var room = wall_to_room[directionWall]
+	RoomSwitcher.switch_scene("res://rooms/" + room + ".tscn", directionWall, player)
 	pass
