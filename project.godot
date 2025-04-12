@@ -38,6 +38,12 @@ MoveRight={
 ]
 }
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/scale=2.0
+
 [rendering]
 
 renderer/rendering_method="mobile"
