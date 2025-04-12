@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cupnxl52rr2jk"]
+
+[ext_resource type="Texture2D" uid="uid://iwibl6t22jf5" path="res://characters/bus/bus.png" id="1_3n6vh"]
+[ext_resource type="Script" path="res://characters/bus/bus.gd" id="1_hafcl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ebj4"]
+size = Vector2(1050, 800.809)
+
+[node name="Bus" type="Sprite2D"]
+texture = ExtResource("1_3n6vh")
+script = ExtResource("1_hafcl")
+
+[node name="BusStartActuator" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusStartActuator"]
+position = Vector2(-4.99995, -0.404777)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0ebj4")
+
+[connection signal="body_entered" from="BusStartActuator" to="." method="_on_bus_start_actuator_body_entered"]

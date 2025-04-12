@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # add movement
-@export var speed = 100
+@export var speed = 180
 
 # func called every frame
 func _process(delta):
