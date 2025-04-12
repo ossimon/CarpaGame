@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0851tf1ox8kq"]
+
+[ext_resource type="PackedScene" uid="uid://cupnxl52rr2jk" path="res://characters/bus/bus.tscn" id="1_5p576"]
+[ext_resource type="PackedScene" uid="uid://c08qiixwrrlvm" path="res://levels/last_level/bus_scene/tmp_character.tscn" id="2_mqfv1"]
+
+[node name="BusScene" type="Node2D"]
+
+[node name="Bus" parent="." instance=ExtResource("1_5p576")]
+position = Vector2(645, 471)
+scale = Vector2(0.5, 0.5)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_mqfv1")]
+position = Vector2(264, 350)
