@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://dldjnvvatigd8"]
+
+[ext_resource type="Script" uid="uid://y8ffvkdsgtrl" path="res://menus/menu.gd" id="1_up602"]
+[ext_resource type="Texture2D" uid="uid://bs7purnpxpviw" path="res://assets/still_images/menu/2132.jpg" id="2_up602"]
+[ext_resource type="FontFile" uid="uid://8kgbotr0fp3y" path="res://assets/fonts/Pixelpurl-0vBPP.ttf" id="3_yuu4p"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_up602")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -595.0
+offset_top = -408.0
+offset_right = 6535.0
+offset_bottom = 2462.0
+grow_vertical = 2
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("2_up602")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 191.0
+offset_right = -3.0
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_yuu4p")
+theme_override_font_sizes/font_size = 30
+text = "Retart"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_yuu4p")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -11.0
+offset_right = 62.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yuu4p")
+theme_override_font_sizes/font_size = 100
+text = "Welcome Home"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
