@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://bq86xm5xqgwcq"]
+[gd_scene load_steps=3 format=3 uid="uid://bq86xm5xqgwcq"]
 
-[node name="LastLevel" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://b2j0gx6bj2aib" path="res://levels/last_level/Background.png" id="1_qy3e8"]
+[ext_resource type="PackedScene" uid="uid://bbmwqxpl6683t" path="res://characters/main_character/main_character.tscn" id="1_xn3xb"]
+
+[node name="LastLevel" type="Sprite2D"]
+texture = ExtResource("1_qy3e8")
+
+[node name="MainCharacter" parent="." instance=ExtResource("1_xn3xb")]
+position = Vector2(84, 42)
