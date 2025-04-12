@@ -1,6 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://46ht3xhdba0g"]
+[gd_scene load_steps=17 format=3 uid="uid://46ht3xhdba0g"]
 
 [ext_resource type="Texture2D" uid="uid://bl1tst13jx516" path="res://assets/Tilemap/dog_medium.png" id="1_r7xhv"]
+[ext_resource type="Script" path="res://characters/dog/dog.gd" id="1_sfvmx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjd87"]
+radius = 6.48148
+height = 23.2688
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cp5be"]
 atlas = ExtResource("1_r7xhv")
@@ -118,13 +123,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Dog" type="Node2D"]
+[node name="Dog" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_sfvmx")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 5)
+rotation = -6.26247
+scale = Vector2(3.24, 1)
+shape = SubResource("CapsuleShape2D_tjd87")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_584yd")
 animation = &"run"
-frame_progress = 0.695935
+autoplay = "run"
+frame = 3
+frame_progress = 0.100041
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1

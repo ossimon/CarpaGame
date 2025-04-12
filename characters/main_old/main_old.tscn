@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bd228rcvpytva"]
+[gd_scene load_steps=17 format=3 uid="uid://bd228rcvpytva"]
 
+[ext_resource type="Script" path="res://characters/main_character/main_character.gd" id="1_b38rl"]
 [ext_resource type="Texture2D" uid="uid://digijyk4iu3rq" path="res://assets/Tilemap/tilemap.png" id="1_o2bjn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jnap"]
@@ -125,14 +126,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="MainOld" type="Node2D"]
+[node name="MainOld" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_b38rl")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_5jnap")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_306nw")
 animation = &"move_bottom"

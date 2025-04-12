@@ -1,10 +1,56 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq86xm5xqgwcq"]
+[gd_scene load_steps=8 format=3 uid="uid://bq86xm5xqgwcq"]
 
 [ext_resource type="Texture2D" uid="uid://b2j0gx6bj2aib" path="res://levels/last_level/Background.png" id="1_qy3e8"]
 [ext_resource type="PackedScene" uid="uid://bbmwqxpl6683t" path="res://characters/main_character/main_young.tscn" id="1_xn3xb"]
+[ext_resource type="Texture2D" uid="uid://xgjyjelv3k2i" path="res://assets/Tilemap/tile_0282.png" id="3_a3j51"]
+[ext_resource type="PackedScene" uid="uid://46ht3xhdba0g" path="res://characters/dog/dog.tscn" id="3_waqi3"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_owvv5"]
+vertices = PackedVector2Array(-74, 88, 230, 101, -230, 101, -170, 88, 8, 64, -28, 64, -74, 46, -28, -26, -230, -102, -170, 46, 230, -102, 8, -26)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 1, 0, 5), PackedInt32Array(5, 0, 6, 7), PackedInt32Array(3, 2, 8, 9), PackedInt32Array(10, 1, 4, 11), PackedInt32Array(8, 10, 11, 7), PackedInt32Array(9, 8, 7, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-240, -112, 240, -112, 240, 112, -240, 111)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2qlj"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktsl7"]
+size = Vector2(16, 16)
 
 [node name="LastLevel" type="Sprite2D"]
+position = Vector2(246, 119)
 texture = ExtResource("1_qy3e8")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_owvv5")
+
+[node name="walls" type="Node2D" parent="NavigationRegion2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D/walls"]
+position = Vector2(-10, 19)
+scale = Vector2(1.04, 4.4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/walls/StaticBody2D"]
+shape = SubResource("RectangleShape2D_o2qlj")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/walls/StaticBody2D"]
+texture = ExtResource("3_a3j51")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="NavigationRegion2D/walls"]
+position = Vector2(-122, 67)
+scale = Vector2(4.78936, -1.32261)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/walls/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_ktsl7")
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/walls/StaticBody2D2"]
+texture = ExtResource("3_a3j51")
+
+[node name="Dog" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("3_waqi3")]
+position = Vector2(-170, -67)
+rotation = -0.0660262
+target_to_chase = NodePath("../MainCharacter")
 
 [node name="MainCharacter" parent="." instance=ExtResource("1_xn3xb")]
 position = Vector2(84, 42)
+scale = Vector2(1.56, 1.39304)
